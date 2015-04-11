@@ -22,7 +22,7 @@ plot4 <- function(datafile="./household_power_consumption.txt" ) {
         plot(ntime , Global_active_power, type="l", ylab="Global Active Power",xlab="")
         plot(ntime , Voltage, type="l",xlab="datetime") 
 
-        plot(ntime , Sub_metering_1, type="l", col="black", ylab="Global Active Power (kilowatts)",xlab="" )
+        plot(ntime , Sub_metering_1, type="l", col="black", ylab="Energy sub metering",xlab="" )
         lines(ntime, Sub_metering_2, col="red", type="l")
         lines(ntime, Sub_metering_3, col="blue", type="l")
         legend("topright",
@@ -30,9 +30,10 @@ plot4 <- function(datafile="./household_power_consumption.txt" ) {
                bty="n",
                legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
                lty=c(1,1,1),
-               pch=c(NA,NA,NA)
+               pch=c(NA,NA,NA),
+               cex=0.9,
+               pt.cex=1
                )
-        
     
         plot(filtered$ntime , Global_reactive_power, type="l",xlab="datetime")
     })

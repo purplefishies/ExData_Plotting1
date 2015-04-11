@@ -3,6 +3,7 @@
 #
 plot3 <- function(datafile="./household_power_consumption.txt" ) {
     tmpdat <- read.csv(datafile,sep=";")
+    par(mfrow = c(1, 1))
     par(bg="white")
 
     tmpdat$ntime <- strptime( paste(tmpdat$Date,tmpdat$Time), format="%d/%m/%Y %H:%M:%S")
@@ -25,7 +26,9 @@ plot3 <- function(datafile="./household_power_consumption.txt" ) {
            col = c("black", "red","blue"),
            legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
            lty=c(1,1,1),
-           pch=c(NA,NA,NA)
+           pch=c(NA,NA,NA),
+           cex=1.2,
+           pt.cex=1
            )
 
     dev.copy(png,file="plot3.png")
