@@ -3,6 +3,7 @@
 #
 plot2 <- function(datafile="./household_power_consumption.txt" ) {
     tmpdat <- read.csv(datafile,sep=";")
+    par(bg="white")
     ## tmpdat$Date <- as.Date( tmpdat$Date, format="%d/%m/%Y" )
     tmpdat$ntime <- strptime( paste(tmpdat$Date,tmpdat$Time), format="%d/%m/%Y %H:%M:%S")
     startdate = strptime("2007-02-01",format="%Y-%m-%d")
