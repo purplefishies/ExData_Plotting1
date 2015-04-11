@@ -14,7 +14,7 @@ plot3 <- function(datafile="./household_power_consumption.txt" ) {
     filtered$Sub_metering_2 <- as.numeric(as.character(filtered$Sub_metering_2))
     filtered$Sub_metering_3 <- as.numeric(as.character(filtered$Sub_metering_3))
 
-    plot(filtered$ntime , filtered$Sub_metering_1, type="l", col="black", ylab="Global Active Power (kilowatts)",xlab="" )
+    plot(filtered$ntime , filtered$Sub_metering_1, type="l", col="black", ylab="Energy sub metering",xlab="" )
     
     lines(filtered$ntime, filtered$Sub_metering_2, col="red", type="l")
     lines(filtered$ntime, filtered$Sub_metering_3, col="blue", type="l")

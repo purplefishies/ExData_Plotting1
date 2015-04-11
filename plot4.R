@@ -1,7 +1,7 @@
 #
 #
 #
-plot3 <- function(datafile="./household_power_consumption.txt" ) {
+plot4 <- function(datafile="./household_power_consumption.txt" ) {
     tmpdat <- read.csv(datafile,sep=";")
 
     par(mfrow = c(2, 2))
@@ -37,16 +37,6 @@ plot3 <- function(datafile="./household_power_consumption.txt" ) {
         plot(filtered$ntime , Global_reactive_power, type="l",xlab="datetime")
     })
 
-    
-    # Now add the axis
-
-    legend("topright",
-           col = c("black", "red","blue"),
-           legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-           lty=c(1,1,1),
-           pch=c(NA,NA,NA)
-           )
-
-    dev.copy(png,file="plot3.png")
+    dev.copy(png,file="plot4.png")
     dev.off()
 }
