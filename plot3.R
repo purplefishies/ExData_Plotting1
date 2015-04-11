@@ -21,9 +21,13 @@ plot3 <- function(datafile="./household_power_consumption.txt" ) {
 
     # Now add the axis
 
-    legend("topright", pch = 1, col = c("black", "red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+    legend("topright",
+           col = c("black", "red","blue"),
+           legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+           lty=c(1,1,1),
+           pch=c(NA,NA,NA)
+           )
 
-    
     dev.copy(png,file="plot3.png")
     dev.off()
 }
